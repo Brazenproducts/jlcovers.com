@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jlcovers.com/sitemap.xml
