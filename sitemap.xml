@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://jlcovers.com/</loc><changefreq>daily</changefreq></url>
-  <url><loc>https://jlcovers.com/best-jeep-wrangler-jl-covers-and-accessories.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://jlcovers.com/buyers-guide.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://jlcovers.com/about.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://jlcovers.com/contact.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://jlcovers.com/jlcovers-trends-2026.html</loc><lastmod>2026-05-17</lastmod></url>
-  <url><loc>https://jlcovers.com/how-to-choose-jlcovers-may-2026.html</loc><lastmod>2026-05-17</lastmod></url>
-  <url><loc>https://jlcovers.com/what-we-look-for-jlcovers-2026.html</loc><lastmod>2026-05-17</lastmod></url>
-  <url><loc>https://jlcovers.com/truth-about-jlcovers-2026.html</loc><lastmod>2026-05-18</lastmod></url>
-  <url><loc>https://jlcovers.com/jlcovers-market-2026.html</loc><lastmod>2026-05-20</lastmod></url>
-  <url><loc>https://jlcovers.com/jlcovers-what-wed-buy-2026.html</loc><lastmod>2026-05-22</lastmod></url>
-  <url><loc>https://jlcovers.com/smart-jlcovers-shopping-2026.html</loc><lastmod>2026-05-24</lastmod></url>
-  <url><loc>https://jlcovers.com/jlcovers-what-buyers-need-2026.html</loc><lastmod>2026-05-26</lastmod></url>
-  <url><loc>https://jlcovers.com/jlcovers-explained-2026.html</loc><lastmod>2026-05-28</lastmod></url>
-  <url><loc>https://jlcovers.com/jlcovers-worth-the-upgrade-2026.html</loc><lastmod>2026-05-30</lastmod></url>
-  <url><loc>https://jlcovers.com/how-to-pick-jlcovers-2026.html</loc><lastmod>2026-06-02</lastmod></url>
-  <url><loc>https://jlcovers.com/jlcovers-practical-guide-2026.html</loc><lastmod>2026-06-06</lastmod></url>
+  <url>
+    <loc>https://jlcovers.com/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
