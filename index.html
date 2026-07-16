@@ -36,7 +36,9 @@ header nav{margin-left:auto}header nav a{color:#ccc;font-size:.85rem;margin-left
 .hero h1 em{color:#f0a500;font-style:normal}
 .hero p{font-size:1.05rem;color:#ddd;max-width:640px;margin:0 auto 1.5rem}
 .badge-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
-.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:.3rem .9rem;font-size:.8rem;font-weight:600;color:#eee}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:.3rem .9rem;font-size:.8rem;font-weight:600;color:#eee;cursor:pointer;transition:all .15s;user-select:none}
+.badge:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.6);color:#fff}
+.badge.badge-active{background:#c8102e;border-color:#c8102e;color:#fff}
 .container{max-width:880px;margin:0 auto;padding:2rem 1.5rem}
 .toc{background:#f8f8f8;border-left:4px solid #c8102e;border-radius:4px;padding:1.2rem 1.5rem;margin-bottom:2.5rem}
 .toc h4{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:.6rem}
@@ -143,11 +145,11 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   <h1>Best Jeep <em>JL &amp; JLU Wrangler</em> Seat Covers 2026</h1>
   <p>Custom-fit seat covers for the Jeep Wrangler JL (2-door) and JLU (4-door Unlimited), model years 2018 to present. Ranked by fit, durability, and off-road practicality.</p>
   <div class="badge-row">
-    <span class="badge">JL 2-Door</span>
-    <span class="badge">JLU 4-Door</span>
-    <span class="badge">2018-2026</span>
-    <span class="badge">Airbag Safe</span>
-    <span class="badge">MOLLE Ready</span>
+    <span class="badge" onclick="filterTag('jl2')" title="Filter: 2-door JL only">JL 2-Door</span>
+    <span class="badge" onclick="filterTag('jlu4')" title="Filter: 4-door JLU only">JLU 4-Door</span>
+    <span class="badge badge-active" onclick="filterTag('all')" title="Show all years">2018–2026</span>
+    <span class="badge" onclick="filterTag('airbag')" title="Filter: airbag-safe covers">Airbag Safe</span>
+    <span class="badge" onclick="filterTag('molle')" title="Filter: MOLLE covers only">MOLLE Ready</span>
   </div>
 </div>
 
@@ -215,7 +217,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
 
 <p>We evaluated JL seat covers on five criteria: (1) custom fit versus universal, (2) material durability for off-road use, (3) MOLLE and organizational capability, (4) waterproofing, and (5) airbag compatibility. Here are the top four picks for the 2018-present Wrangler JL and JLU.</p>
 
-<div class="pick top-pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
+<div class="pick top-pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026" data-tags="jl2 jlu4 airbag molle">
   <img src="https://cdn.shopify.com/s/files/1/0936/7476/products/bartact-jeep-wrangler-seat-covers-black-red-same-as-insert-color-front-tactical-seat-covers-for-jeep-wrangler-jlu-2018-22-4-door-only-not-for-mojave-or-392-edition-bartact-w-molle-290.jpg?v=1762457338"
        alt="Bartact MOLLE Tactical Front Seat Covers for Jeep Wrangler JL JLU 2018-2026 black with red insert"
        loading="lazy" width="320" height="320">
@@ -252,7 +254,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   </div>
 </div>
 
-<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
+<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026" data-tags="jl2 jlu4 airbag">
   <img src="https://m.media-amazon.com/images/I/81nLKDtesDL._AC_UL320_.jpg"
        alt="Jeep Wrangler JL JLU 4-door custom fit seat covers full interior set 2018-2026"
        loading="lazy" width="320" height="320">
@@ -287,7 +289,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   </div>
 </div>
 
-<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
+<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026" data-tags="jl2 jlu4 airbag">
   <img src="https://m.media-amazon.com/images/I/61y6Yb-vSHL._AC_UL320_.jpg"
        alt="Waterproof neoprene seat covers for Jeep Wrangler JL JLU 2018-2026 airbag compatible"
        loading="lazy" width="320" height="320">
@@ -321,7 +323,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   </div>
 </div>
 
-<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
+<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026" data-tags="jl2 jlu4 airbag">
   <img src="https://m.media-amazon.com/images/I/81gBKrp3YjL._AC_UL320_.jpg"
        alt="Huidasource Wrangler JL seat covers 4 door 2018-2026 leather custom car seat cover set"
        loading="lazy" width="320" height="320">
@@ -570,29 +572,59 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
 </footer>
 
 <script>
-function filterYear(year) {
-  document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
-  const target = year === 'all'
-    ? document.querySelector('.year-btn.all-btn')
-    : [...document.querySelectorAll('.year-btn')].find(b => b.textContent.trim() === year);
-  if (target) target.classList.add('active');
+var activeYear = 'all';
+var activeTag = 'all';
 
-  const picks = document.querySelectorAll('.pick[data-years]');
-  let shown = 0;
-  picks.forEach(p => {
-    const fits = year === 'all' || p.getAttribute('data-years').split(',').includes(year);
-    p.classList.toggle('hidden', !fits);
-    if (fits) shown++;
+function applyFilters() {
+  var picks = document.querySelectorAll('.pick[data-years]');
+  var shown = 0;
+  picks.forEach(function(p) {
+    var yearOk = activeYear === 'all' || p.getAttribute('data-years').split(',').includes(activeYear);
+    var tagOk = activeTag === 'all' || p.getAttribute('data-tags').split(' ').includes(activeTag);
+    var visible = yearOk && tagOk;
+    p.classList.toggle('hidden', !visible);
+    if (visible) shown++;
   });
-
-  const msg = document.getElementById('filter-msg');
-  if (year === 'all') {
-    msg.classList.remove('show');
-  } else {
-    msg.textContent = shown + ' cover' + (shown !== 1 ? 's' : '') + ' fit the ' + year + ' Jeep Wrangler JL/JLU';
-    msg.classList.add('show');
-    document.getElementById('picks').scrollIntoView({behavior:'smooth', block:'start'});
+  var msg = document.getElementById('filter-msg');
+  var parts = [];
+  if (activeYear !== 'all') parts.push(activeYear);
+  if (activeTag !== 'all') {
+    var tagLabels = {jl2:'JL 2-Door',jlu4:'JLU 4-Door',airbag:'Airbag Safe',molle:'MOLLE'};
+    parts.push(tagLabels[activeTag] || activeTag);
   }
+  if (parts.length) {
+    msg.textContent = shown + ' cover' + (shown!==1?'s':'') + ' match: ' + parts.join(' + ');
+    msg.classList.add('show');
+  } else {
+    msg.classList.remove('show');
+  }
+}
+
+function filterYear(year) {
+  activeYear = year;
+  document.querySelectorAll('.year-btn').forEach(function(b){ b.classList.remove('active'); });
+  var target = year === 'all'
+    ? document.querySelector('.year-btn.all-btn')
+    : Array.from(document.querySelectorAll('.year-btn')).find(function(b){ return b.textContent.trim() === year; });
+  if (target) target.classList.add('active');
+  applyFilters();
+  document.getElementById('picks').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function filterTag(tag) {
+  activeTag = tag === activeTag ? 'all' : tag; // toggle off if same
+  document.querySelectorAll('.badge').forEach(function(b){ b.classList.remove('badge-active'); });
+  if (activeTag === 'all') {
+    var allBadge = Array.from(document.querySelectorAll('.badge')).find(function(b){ return b.textContent.trim().startsWith('2018'); });
+    if (allBadge) allBadge.classList.add('badge-active');
+  } else {
+    var tagMap = {jl2:'JL 2-Door',jlu4:'JLU 4-Door',airbag:'Airbag Safe',molle:'MOLLE Ready'};
+    var label = tagMap[activeTag];
+    var match = Array.from(document.querySelectorAll('.badge')).find(function(b){ return b.textContent.trim() === label; });
+    if (match) match.classList.add('badge-active');
+  }
+  applyFilters();
+  document.getElementById('picks').scrollIntoView({behavior:'smooth', block:'start'});
 }
 </script>
 </body>
