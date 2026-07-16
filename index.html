@@ -64,11 +64,13 @@ p{margin-bottom:1rem;color:#333}ul,ol{margin-bottom:1rem;padding-left:1.4rem}li{
 .pros ul,.cons ul{list-style:none;padding:0}
 .pros li::before{content:"+ ";color:#2a7a2a;font-weight:700}.cons li::before{content:"- ";color:#c8102e;font-weight:700}
 .gen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:1.5rem 0}
-.gen-card{background:#f8f8f8;border-radius:10px;padding:1rem 1.2rem}
-.gen-card.current{border:2px solid #c8102e;background:#fff8f0}
+.gen-card{background:#f8f8f8;border-radius:10px;padding:1rem 1.2rem;cursor:pointer;transition:all .15s;text-decoration:none;display:block;color:inherit}
+.gen-card:hover{background:#f0f0f0;border-color:#c8102e;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
+.gen-card.current{border:2px solid #c8102e;background:#fff8f0;cursor:default;transform:none;box-shadow:none}
 .gen-name{font-weight:800;font-size:.95rem;color:#1a1a2e;margin-bottom:.25rem}
 .gen-years{font-size:.8rem;color:#c8102e;font-weight:700;margin-bottom:.4rem}
 .gen-card p{font-size:.82rem;color:#555;margin:0}
+.gen-card:not(.current) .gen-name::after{content:' →';color:#c8102e;font-size:.85em}
 .mat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0}
 .mat-card{background:#f8f8f8;border-radius:10px;padding:1.2rem}
 .mat-card h4{font-size:.95rem;font-weight:800;color:#1a1a2e;margin-bottom:.5rem}
@@ -184,31 +186,31 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
 <p>Seat cover shopping for a Wrangler starts with knowing exactly which generation you own. Seat shapes, mounting hardware, airbag routing, and interior dimensions all differ across generations. A TJ cover will not fit a JK, and a JK cover will not fit a JL. Here is the full Wrangler family tree:</p>
 
 <div class="gen-grid">
-  <div class="gen-card">
+  <a class="gen-card" href="https://wranglerseatcover.com" target="_blank" rel="noopener">
     <div class="gen-name">YJ Wrangler</div>
     <div class="gen-years">1987 - 1995</div>
     <p>Square headlights, flat minimalist seats. Limited aftermarket custom-fit options -- universal covers are usually the only path.</p>
-  </div>
-  <div class="gen-card">
+  </a>
+  <a class="gen-card" href="https://tjseatcovers.com" target="_blank" rel="noopener">
     <div class="gen-name">TJ Wrangler</div>
     <div class="gen-years">1997 - 2006</div>
     <p>Round headlights, coil-spring suspension. Includes LJ Unlimited (2004-2006). TJ seat covers do not cross-fit with JK or JL platforms.</p>
-  </div>
-  <div class="gen-card">
+  </a>
+  <a class="gen-card" href="https://jkseatcovers.com" target="_blank" rel="noopener">
     <div class="gen-name">JK / JKU</div>
     <div class="gen-years">2007 - 2018</div>
     <p>Major redesign. JK = 2-door, JKU = 4-door Unlimited. Different seat shape from the JL -- JK covers will not fit a 2018+ JL correctly.</p>
-  </div>
+  </a>
   <div class="gen-card current">
-    <div class="gen-name">JL / JLU [This Page]</div>
+    <div class="gen-name">JL / JLU — You are here</div>
     <div class="gen-years">2018 - Present</div>
     <p>Current production Wrangler. JL = 2-door, JLU = 4-door Unlimited. All picks in this guide are for the JL/JLU 2018-2026.</p>
   </div>
-  <div class="gen-card">
+  <a class="gen-card" href="https://gladiatorseatcover.com" target="_blank" rel="noopener">
     <div class="gen-name">Gladiator JT</div>
     <div class="gen-years">2019 - Present</div>
     <p>Wrangler-based pickup. Shares JL front seat design -- JL front covers often fit, but always verify rear fitment separately.</p>
-  </div>
+  </a>
 </div>
 
 <p>This page covers the JL and JLU exclusively. The JL is the current production Wrangler (2018-present) and is by far the most common Wrangler on the road today. For JK, TJ, or Gladiator JT, see the generation-specific guides linked in Related Sites below.</p>
