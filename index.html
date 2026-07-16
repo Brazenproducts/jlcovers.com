@@ -92,6 +92,20 @@ tr:nth-child(even){background:#f8f8f8}tr.winner{background:#fff8f0!important}tr.
 .disclaimer{background:#fff8e8;border:1px solid #f0d080;border-radius:8px;padding:1rem 1.2rem;font-size:.8rem;color:#555;margin:2rem 0}
 footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:.8rem}footer a{color:#aaa}
 @media(max-width:600px){.pick{flex-direction:column}.pick img{width:100%;height:200px}.pros-cons{flex-direction:column}}
+
+/* Model Year Filter */
+.year-filter{background:#f8f8f8;border-bottom:1px solid #eee;padding:.75rem 1.5rem}
+.year-filter-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.year-filter-label{font-size:.7rem;font-weight:800;color:#888;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap}
+.year-btns{display:flex;flex-wrap:wrap;gap:.35rem}
+.year-btn{padding:.3rem .7rem;border-radius:16px;border:1.5px solid #ddd;background:#fff;font-size:.75rem;font-weight:700;color:#555;cursor:pointer;transition:all .15s;white-space:nowrap}
+.year-btn:hover{border-color:#c8102e;color:#c8102e}
+.year-btn.active{background:#c8102e;color:#fff;border-color:#c8102e}
+.year-btn.all-btn{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
+.year-btn.all-btn:hover{background:#333;border-color:#333}
+.pick.hidden{display:none}
+.filter-msg{font-size:.78rem;color:#888;padding:.3rem .6rem;background:#fff;border:1px solid #ddd;border-radius:6px;display:none}
+.filter-msg.show{display:inline-block}
 </style>
 </head>
 <body>
@@ -104,6 +118,26 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
     <a href="#faq">FAQ</a>
   </nav>
 </header>
+
+<!-- Model Year Filter -->
+<div class="year-filter">
+  <div class="year-filter-inner">
+    <span class="year-filter-label">My model year:</span>
+    <div class="year-btns">
+      <button class="year-btn all-btn active" onclick="filterYear('all')">All (2018–2026)</button>
+      <button class="year-btn" onclick="filterYear('2018')">2018</button>
+      <button class="year-btn" onclick="filterYear('2019')">2019</button>
+      <button class="year-btn" onclick="filterYear('2020')">2020</button>
+      <button class="year-btn" onclick="filterYear('2021')">2021</button>
+      <button class="year-btn" onclick="filterYear('2022')">2022</button>
+      <button class="year-btn" onclick="filterYear('2023')">2023</button>
+      <button class="year-btn" onclick="filterYear('2024')">2024</button>
+      <button class="year-btn" onclick="filterYear('2025')">2025</button>
+      <button class="year-btn" onclick="filterYear('2026')">2026</button>
+    </div>
+    <span class="filter-msg" id="filter-msg"></span>
+  </div>
+</div>
 
 <div class="hero">
   <h1>Best Jeep <em>JL &amp; JLU Wrangler</em> Seat Covers 2026</h1>
@@ -181,7 +215,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
 
 <p>We evaluated JL seat covers on five criteria: (1) custom fit versus universal, (2) material durability for off-road use, (3) MOLLE and organizational capability, (4) waterproofing, and (5) airbag compatibility. Here are the top four picks for the 2018-present Wrangler JL and JLU.</p>
 
-<div class="pick top-pick">
+<div class="pick top-pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
   <img src="https://cdn.shopify.com/s/files/1/0936/7476/products/bartact-jeep-wrangler-seat-covers-black-red-same-as-insert-color-front-tactical-seat-covers-for-jeep-wrangler-jlu-2018-22-4-door-only-not-for-mojave-or-392-edition-bartact-w-molle-290.jpg?v=1762457338"
        alt="Bartact MOLLE Tactical Front Seat Covers for Jeep Wrangler JL JLU 2018-2026 black with red insert"
        loading="lazy" width="320" height="320">
@@ -218,7 +252,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   </div>
 </div>
 
-<div class="pick">
+<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
   <img src="https://m.media-amazon.com/images/I/81nLKDtesDL._AC_UL320_.jpg"
        alt="Jeep Wrangler JL JLU 4-door custom fit seat covers full interior set 2018-2026"
        loading="lazy" width="320" height="320">
@@ -253,7 +287,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   </div>
 </div>
 
-<div class="pick">
+<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
   <img src="https://m.media-amazon.com/images/I/61y6Yb-vSHL._AC_UL320_.jpg"
        alt="Waterproof neoprene seat covers for Jeep Wrangler JL JLU 2018-2026 airbag compatible"
        loading="lazy" width="320" height="320">
@@ -287,7 +321,7 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   </div>
 </div>
 
-<div class="pick">
+<div class="pick" data-years="2018,2019,2020,2021,2022,2023,2024,2025,2026">
   <img src="https://m.media-amazon.com/images/I/81gBKrp3YjL._AC_UL320_.jpg"
        alt="Huidasource Wrangler JL seat covers 4 door 2018-2026 leather custom car seat cover set"
        loading="lazy" width="320" height="320">
@@ -535,5 +569,31 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   <p>&copy; 2026 JLCovers.com &mdash; Independent Jeep JL Wrangler Seat Cover Reviews &mdash; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a> &middot; <a href="/privacy.html">Privacy</a></p>
 </footer>
 
+<script>
+function filterYear(year) {
+  document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+  const target = year === 'all'
+    ? document.querySelector('.year-btn.all-btn')
+    : [...document.querySelectorAll('.year-btn')].find(b => b.textContent.trim() === year);
+  if (target) target.classList.add('active');
+
+  const picks = document.querySelectorAll('.pick[data-years]');
+  let shown = 0;
+  picks.forEach(p => {
+    const fits = year === 'all' || p.getAttribute('data-years').split(',').includes(year);
+    p.classList.toggle('hidden', !fits);
+    if (fits) shown++;
+  });
+
+  const msg = document.getElementById('filter-msg');
+  if (year === 'all') {
+    msg.classList.remove('show');
+  } else {
+    msg.textContent = shown + ' cover' + (shown !== 1 ? 's' : '') + ' fit the ' + year + ' Jeep Wrangler JL/JLU';
+    msg.classList.add('show');
+    document.getElementById('picks').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+</script>
 </body>
 </html>
