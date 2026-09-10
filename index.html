@@ -285,5 +285,61 @@ footer{background:#1a1a2e;color:#888;padding:1.5rem;text-align:center;font-size:
   <a href="https://bullstrap.com/collections/limit-straps" target="_blank" rel="noopener" style="color:#c8601a;font-weight:600;margin:0 .4rem">Limit Straps</a>·
   <a href="https://bullstrap.com/collections/all" target="_blank" rel="noopener" style="color:#c8601a;font-weight:600;margin:0 .4rem">Browse All →</a>
 </div>
+<script>
+var activeYear = 'all';
+var activeTag = 'all';
+
+function applyFilters() {
+  var picks = document.querySelectorAll('.pick[data-years]');
+  var shown = 0;
+  picks.forEach(function(p) {
+    var yearOk = activeYear === 'all' || p.getAttribute('data-years').split(',').includes(activeYear);
+    var tagOk = activeTag === 'all' || p.getAttribute('data-tags').split(' ').includes(activeTag);
+    var visible = yearOk && tagOk;
+    p.classList.toggle('hidden', !visible);
+    if (visible) shown++;
+  });
+  var msg = document.getElementById('filter-msg');
+  var parts = [];
+  if (activeYear !== 'all') parts.push(activeYear);
+  if (activeTag !== 'all') {
+    var tagLabels = {jl2:'JL 2-Door',jlu4:'JLU 4-Door',airbag:'Airbag Safe',molle:'MOLLE'};
+    parts.push(tagLabels[activeTag] || activeTag);
+  }
+  if (parts.length) {
+    msg.textContent = shown + ' cover' + (shown!==1?'s':'') + ' match: ' + parts.join(' + ');
+    msg.classList.add('show');
+  } else {
+    msg.classList.remove('show');
+  }
+}
+
+function filterYear(year) {
+  activeYear = year;
+  document.querySelectorAll('.year-btn').forEach(function(b){ b.classList.remove('active'); });
+  var target = year === 'all'
+    ? document.querySelector('.year-btn.all-btn')
+    : Array.from(document.querySelectorAll('.year-btn')).find(function(b){ return b.textContent.trim() === year; });
+  if (target) target.classList.add('active');
+  applyFilters();
+  document.getElementById('picks').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function filterTag(tag) {
+  activeTag = tag === activeTag ? 'all' : tag;
+  document.querySelectorAll('.badge').forEach(function(b){ b.classList.remove('badge-active'); });
+  if (activeTag === 'all') {
+    var allBadge = Array.from(document.querySelectorAll('.badge')).find(function(b){ return b.textContent.trim().startsWith('2018'); });
+    if (allBadge) allBadge.classList.add('badge-active');
+  } else {
+    var tagMap = {jl2:'JL 2-Door',jlu4:'JLU 4-Door',airbag:'Airbag Safe',molle:'MOLLE Ready'};
+    var label = tagMap[activeTag];
+    var match = Array.from(document.querySelectorAll('.badge')).find(function(b){ return b.textContent.trim() === label; });
+    if (match) match.classList.add('badge-active');
+  }
+  applyFilters();
+  document.getElementById('picks').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
 </body>
 </html>
